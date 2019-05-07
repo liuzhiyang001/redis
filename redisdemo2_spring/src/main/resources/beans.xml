@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWord" class="com.lzy.spring.HelloWord">
+        <property name="massage" value="hello my massage"/>
+    </bean>
+
+    <bean id="user" class="com.lzy.spring.pojo.User">
+        <property name="age" value="18"/>
+        <property name="name" value="得志"/>
+        <property name="sex" value="女"/>
+    </bean>
+
+    <bean id="userService" class="com.lzy.spring.service.UserService">
+        <!--方法一：-->
+        <!--<property name="user" ref="user"/>&lt;!&ndash;如果此处name报红，因为没有set方法&ndash;&gt;-->
+        <!--方法二：-->
+        <constructor-arg ref="user"/><!--如果此处报红，因为没有构造方法-->
+    </bean>
+
+</beans>

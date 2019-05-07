@@ -13,13 +13,12 @@ public class JedisOpreate {
         Jedis jedis=null;
         try {
             jedis=new Jedis("192.168.116.128",6379);
-
-        }catch (Exception e){//            //jedis=new Jedis("192.168.137.209",6379);
             jedis.auth("123");
-  //          String setResult =jedis.set("hello","word1");
+            String setResult =jedis.set("hello","word1");
             String hello=jedis.get("hello");
             System.out.println(hello);
-//            System.out.println(setResult);
+            System.out.println(setResult);
+        }catch (Exception e){//            //jedis=new Jedis("192.168.137.209",6379);
             e.printStackTrace();
         }finally {
             jedis.close();

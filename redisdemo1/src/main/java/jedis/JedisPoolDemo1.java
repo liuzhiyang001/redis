@@ -1,7 +1,6 @@
 package jedis;
 
-import jedis.pojo.User;
-import jedis.tool.ProtostuffSerializer;
+
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
